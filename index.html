@@ -17,53 +17,111 @@
   <meta property="og:url" content="https://utm.swetrix.com">
   <meta name="google" content="notranslate" />
   <link rel="apple-touch-icon" href="/assets/logo192.png" />
-
   <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header class="bg-indigo-600 dark:bg-gray-750">
-    <nav class="mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-      <div class="w-full py-4 flex items-center justify-between border-b border-indigo-500 dark:border-gray-300 lg:border-none">
-        <div class="flex items-center">
-          <a href="/">
-            <span class="sr-only">Swetrix</span>
-            <img class="h-10" src="/assets/logo_white.svg" alt="">
-          </a>
-          <div class="flex ml-10 space-x-1">
-            <a href="https://blog.swetrix.com"
-              class="flex justify-center items-center text-base select-none font-medium text-white hover:text-indigo-50 py-2 px-2 dark:hover:bg-gray-700 hover:bg-indigo-500 rounded-md"
-              target="_blank" rel="noreferrer noopener">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-5 h-5 mr-1">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-              </svg>
-              Blog
-            </a>
+<body class="bg-[#eee]">
+  <header>
+    <img class="max-w-[100px] mx-auto mt-10" src="assets/logo192.png" alt="logo">
+    <h1 class="max-w-max mx-auto text-4xl mt-4 font-medium">Swetrix URL Builder</h1>
+    <h2 class="max-w-max mb-10 text-center mx-auto text-2xl mt-2">Create a link with UTM parameters for an advertising
+      campaign</h2>
+  </header>
+  <main class="mb-32">
+    <div class="container mx-auto">
+      <div class="text-gray-800 border-2 border-[#fdfdfe] rounded-md p-12 bg-white">
+        <h2 class="text-2xl font-medium">When should I use UTM parameters?</h2>
+        <ul class="list-disc mt-3 ml-8 mb-4">
+          <li>You are running an advertising campaign on Google or social networks and want to know, where your users
+            are coming from.</li>
+          <li>You use other ways to attract readers and potential customers and want to know more about where they come
+            from.</li>
+          <li>You send newsletters to your subscribers using e-marketing services, and you want to track their success
+            rates.</li>
+        </ul>
+      </div>
+      <div class="text-gray-800 mt-4 border-2 border-[#fdfdfe] rounded-md p-12 bg-white">
+        <div>
+          <h3 class="text-2xl font-medium">Your URL address</h3>
+          <div class="flex items-center mt-3">
+            <select name="URLADREES" class="dropdown-btn">
+              <option value="http://">http://</option>
+              <option value="https://">https://</option>
+            </select>
+            <input for="utm" name="utm_url" type="text" placeholder="swetrix.com"
+              class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
           </div>
         </div>
-        <div class="flex justify-center items-center flex-wrap ml-1 md:ml-10 space-y-1 sm:space-y-0 space-x-2 md:space-x-4">
-          <div class="transition-all duration-1000 ease-in-out">
-            <svg xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
-              class="h-10 w-10 text-indigo-100 hover:text-indigo-200 cursor-pointer">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
+        <div class="flex justify-between">
+          <div class="mt-10">
+            <h4 class="text-grey-800 text-xl">Required parameters</h4>
+            <div>
+              <div class="mt-4">
+                <span>Campaign source</span>
+                <div class="flex items-center">
+                  <span class="utm-label">utm_source</span>
+                  <input name="utm_source" type="text" placeholder="google, yandex, vk, facebook"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                </div>
+              </div>
+              <div class="mt-4">
+                <span>Campaign medium</span>
+                <div class="flex items-center">
+                  <span class="utm-label">utm_medium</span>
+                  <input name="utm_medium" type="text" placeholder="cpc, email, banner, article"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                </div>
+              </div>
+              <div class="mt-4">
+                <span>Campaign name</span>
+                <div class="flex items-center">
+                  <span class="utm-label">utm_campaign</span>
+                  <input name="utm_campaign" type="text" placeholder="promo, discount, sale"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10">
+            <h4 class="text-grey-800 text-xl">Optional parameters</h4>
+            <div>
+              <div class="mt-4">
+                <span>Campaign content</span>
+                <div class="flex items-center">
+                  <span class="utm-label">utm_content</span>
+                  <input name="utm_content" type="text" placeholder="link, landing page"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                </div>
+              </div>
+              <div class="mt-4">
+                <span>Campaign term</span>
+                <div class="flex items-center">
+                  <span class="utm-label">utm_term</span>
+                  <input name="utm_term" type="text" placeholder="free, -30%, registration"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </nav>
-  </header>
-  <div>
-    <h2>Create a link with UTM parameters for an advertising campaign</h2>
-  </div>
+      <div class="text-gray-800 border-2 mt-5 border-[#fdfdfe] rounded-md p-12 bg-white">
+        <h2 class="text-3xl font-medium">Result</h2>
+        <div class="flex items-center mt-4">
+          <span class="dropdown-btn">Copy</span>
+          <input for="utm" name="utm_url" type="text" placeholder="You will see the result here..."
+            class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 
 </html>
