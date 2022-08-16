@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Campaign URL builder | Swetrix</title>
-  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="icon" href="assets/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#818cf8" />
   <meta name="description" content="Campaign URL builder | Swetrix" />
@@ -16,50 +16,62 @@
   <meta property="og:site_name" content="Swetrix URL Builder" />
   <meta property="og:url" content="https://utm.swetrix.com">
   <meta name="google" content="notranslate" />
-  <link rel="apple-touch-icon" href="/assets/logo192.png" />
+  <link rel="apple-touch-icon" href="assets/logo192.png" />
   <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <script src="script.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-[#eee]">
-  <header>
-    <img class="max-w-[100px] mx-auto mt-10" src="assets/logo192.png" alt="logo">
-    <h1 class="max-w-max mx-auto text-4xl mt-4 font-medium">Swetrix URL Builder</h1>
-    <h2 class="max-w-max mb-10 text-center mx-auto text-2xl mt-2">Create a link with UTM parameters for an advertising
-      campaign</h2>
+  <header class="px-5 lg:px-0 text-center">
+    <div class="flex justify-center mt-10">
+      <a href="https://swetrix.com" target="_blank">
+        <img class="max-w-[100px]" src="assets/logo192.png" alt="logo">
+      </a>
+    </div>
+    <h1 class="max-w-max mx-auto text-4xl mt-4 font-medium">UTM Campaign URL builder</h1>
+    <h2 class="max-w-max mb-10 text-center mx-auto text-2xl mt-2">
+      Create a link with UTM parameters for an advertising campaign
+    </h2>
   </header>
   <main class="mb-32">
-    <div class="container mx-auto">
-      <div class="text-gray-800 border-2 border-[#fdfdfe] rounded-md p-12 bg-white">
-        <h2 class="text-2xl font-medium">When should I use UTM parameters?</h2>
-        <ul class="list-disc mt-3 ml-8 mb-4">
-          <li>You are running an advertising campaign on Google or social networks and want to know, where your users
-            are coming from.</li>
-          <li>You use other ways to attract readers and potential customers and want to know more about where they come
-            from.</li>
-          <li>You send newsletters to your subscribers using e-marketing services, and you want to track their success
-            rates.</li>
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="text-gray-800 border-2 border-[#fdfdfe] rounded-md p-8 bg-white">
+        <h2 class="text-2xl font-medium">When should I utilise UTM parameters?</h2>
+        <ul class="list-disc mt-3 ml-8">
+          <li>
+            You want to see where your users are coming from when you are running an advertising campaign on Google or social media.
+          </li>
+          <li>
+            You employ additional strategies to draw readers and potential clients, and you are curious about their origins.
+          </li>
+          <li>
+            Using e-marketing services, you send newsletters to your subscribers, and you want to monitor how effective they are.
+          </li>
         </ul>
       </div>
-      <div class="text-gray-800 mt-4 border-2 border-[#fdfdfe] rounded-md p-12 bg-white">
+      <div class="text-gray-800 mt-4 border-2 border-[#fdfdfe] rounded-md p-8 bg-white">
         <div>
           <h3 class="text-2xl font-medium">Your URL address</h3>
           <div class="flex items-center mt-3">
-            <select name="URLADREES" class="dropdown-btn">
+            <select onchange="onChangePrefix(event)" name="URLADDRESS" class="dropdown-btn" autocomplete="off">
+              <option value="https://" selected>https://</option>
               <option value="http://">http://</option>
-              <option value="https://">https://</option>
             </select>
-            <input for="utm" name="utm_url" type="text" placeholder="swetrix.com"
-              class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+            <input
+              oninput="onEditURL(event)"
+              type="text"
+              placeholder="swetrix.com"
+              class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
+              autocomplete="off"
+            >
           </div>
         </div>
-        <div class="flex justify-between">
+        <div class="flex justify-between flex-col lg:flex-row">
           <div class="mt-10">
             <h4 class="text-grey-800 text-xl">Required parameters</h4>
             <div>
@@ -67,24 +79,24 @@
                 <span>Campaign source</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_source</span>
-                  <input name="utm_source" type="text" placeholder="google, yandex, vk, facebook"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                  <input oninput="onChangeParams('utm_source')(event)" name="utm_source" type="text" placeholder="google, yandex, vk, facebook"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
                 </div>
               </div>
               <div class="mt-4">
                 <span>Campaign medium</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_medium</span>
-                  <input name="utm_medium" type="text" placeholder="cpc, email, banner, article"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                  <input oninput="onChangeParams('utm_medium')(event)" name="utm_medium" type="text" placeholder="cpc, email, banner, article"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
                 </div>
               </div>
               <div class="mt-4">
                 <span>Campaign name</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_campaign</span>
-                  <input name="utm_campaign" type="text" placeholder="promo, discount, sale"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                  <input oninput="onChangeParams('utm_campaign')(event)" name="utm_campaign" type="text" placeholder="promo, discount, sale"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
                 </div>
               </div>
             </div>
@@ -96,32 +108,44 @@
                 <span>Campaign content</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_content</span>
-                  <input name="utm_content" type="text" placeholder="link, landing page"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                  <input oninput="onChangeParams('utm_content')(event)" name="utm_content" type="text" placeholder="link, landing page"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
                 </div>
               </div>
               <div class="mt-4">
                 <span>Campaign term</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_term</span>
-                  <input name="utm_term" type="text" placeholder="free, -30%, registration"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                  <input oninput="onChangeParams('utm_term')(event)" name="utm_term" type="text" placeholder="free, -30%, registration"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-gray-800 border-2 mt-5 border-[#fdfdfe] rounded-md p-12 bg-white">
+      <div class="text-gray-800 border-2 mt-5 border-[#fdfdfe] rounded-md p-8 bg-white">
         <h2 class="text-3xl font-medium">Result</h2>
         <div class="flex items-center mt-4">
-          <span class="dropdown-btn">Copy</span>
-          <input for="utm" name="utm_url" type="text" placeholder="You will see the result here..."
-            class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+          <span onclick="copyResultToCB()" class="dropdown-btn">Copy</span>
+          <input id="result" type="text" placeholder="You will see the result here..."
+            class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off" disabled>
         </div>
+      </div>
+      <hr class="border-gray-400 dark:border-gray-600 mt-5" />
+      <div class="text-gray-800">
+        These, and many other parameters, can be tracked on a service we have created -
+        <a href="https://swetrix.com" class="text-blue-600 hover:text-indigo-800 hover:underline" target="_blank">
+          Swetrix Analytics.
+        </a>
+        <br />
+        Swetrix is a GDPR-compatible, fully cookieless analytics service that provides a wide range of options and focuses on user privacy!
+        <br />
+        Just give it a try and we promise that you're going to love it! :)
       </div>
     </div>
   </main>
+  <script src="script.js"></script>
 </body>
 
 </html>

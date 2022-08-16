@@ -1,6 +1,14 @@
+html {
+  font-family: 'Inter', 'Cantarell', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
 .dropdown-btn {
   color: #fff;
   cursor: pointer;
+  /* text-indigo-500 */
   border-color: #6366F1 !important;
   background-color: #6366F1 !important;
   display: inline-block;
@@ -18,6 +26,12 @@
   border-bottom-right-radius: 0;
   transition: all .15s ease-in-out;
   font-weight: 400;
+}
+
+.dropdown-btn:hover {
+  /* text-indigo-600 */
+  border-color: #4F46E5 !important;
+  background-color: #4F46E5 !important;
 }
 
 .utm-label {
