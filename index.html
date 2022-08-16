@@ -11,10 +11,16 @@
   <meta name="twitter:title" content="Campaign URL builder | Swetrix" />
   <meta name="twitter:description" content="Campaign URL builder, UTM tags editor, made by Swetrix" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content="https://url.swetrix.com/assets/screenshot.png">
   <meta property="og:title" content="Swetrix URL Builder" />
   <meta property="og:description" content="Campaign URL builder | Swetrix" />
   <meta property="og:site_name" content="Swetrix URL Builder" />
   <meta property="og:url" content="https://utm.swetrix.com">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://url.swetrix.com/assets/screenshot.png">
+  <meta property="og:locale" content="en">
+  <meta name="apple-mobile-web-app-title" content="Swetrix UTM Builder">
+  <meta name="application-name" content="Swetrix UTM Builder">
   <meta name="google" content="notranslate" />
   <link rel="apple-touch-icon" href="assets/logo192.png" />
   <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
@@ -45,17 +51,21 @@
         <h2 class="text-2xl font-medium">When should I utilise UTM parameters?</h2>
         <ul class="list-disc mt-3 ml-8">
           <li>
-            You want to see where your users are coming from when you are running an advertising campaign on Google or social media.
+            You want to see where your users are coming from when you are running an advertising campaign on Google or
+            social media.
           </li>
           <li>
-            You employ additional strategies to draw readers and potential clients, and you are curious about their origins.
+            You employ additional strategies to draw readers and potential clients, and you are curious about their
+            origins.
           </li>
           <li>
-            Using e-marketing services, you send newsletters to your subscribers, and you want to monitor how effective they are.
+            Using e-marketing services, you send newsletters to your subscribers, and you want to monitor how effective
+            they are.
           </li>
         </ul>
         <p class="mt-2">
-          <a href="https://blog.swetrix.com/post/using-utm-parameters/" class="text-blue-600 hover:text-indigo-800 hover:underline" target="_blank">
+          <a href="https://blog.swetrix.com/post/using-utm-parameters/"
+            class="text-blue-600 hover:text-indigo-800 hover:underline" target="_blank">
             Learn more
           </a>
           about what UTMs are and how Swetrix makes use of them.
@@ -69,13 +79,9 @@
               <option value="https://" selected>https://</option>
               <option value="http://">http://</option>
             </select>
-            <input
-              oninput="onEditURL(event)"
-              type="text"
-              placeholder="swetrix.com"
+            <input oninput="onEditURL(event)" type="text" placeholder="swetrix.com"
               class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
-              autocomplete="off"
-            >
+              autocomplete="off">
           </div>
         </div>
         <div class="flex justify-between flex-col lg:flex-row">
@@ -86,24 +92,30 @@
                 <span>Campaign source</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_source</span>
-                  <input oninput="onChangeParams('utm_source')(event)" name="utm_source" type="text" placeholder="google, yandex, vk, facebook"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
+                  <input oninput="onChangeParams('utm_source')(event)" name="utm_source" type="text"
+                    placeholder="google, yandex, vk, facebook"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
+                    autocomplete="off">
                 </div>
               </div>
               <div class="mt-4">
                 <span>Campaign medium</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_medium</span>
-                  <input oninput="onChangeParams('utm_medium')(event)" name="utm_medium" type="text" placeholder="cpc, email, banner, article"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
+                  <input oninput="onChangeParams('utm_medium')(event)" name="utm_medium" type="text"
+                    placeholder="cpc, email, banner, article"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
+                    autocomplete="off">
                 </div>
               </div>
               <div class="mt-4">
                 <span>Campaign name</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_campaign</span>
-                  <input oninput="onChangeParams('utm_campaign')(event)" name="utm_campaign" type="text" placeholder="promo, discount, sale"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
+                  <input oninput="onChangeParams('utm_campaign')(event)" name="utm_campaign" type="text"
+                    placeholder="promo, discount, sale"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
+                    autocomplete="off">
                 </div>
               </div>
             </div>
@@ -115,16 +127,20 @@
                 <span>Campaign content</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_content</span>
-                  <input oninput="onChangeParams('utm_content')(event)" name="utm_content" type="text" placeholder="link, landing page"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
+                  <input oninput="onChangeParams('utm_content')(event)" name="utm_content" type="text"
+                    placeholder="link, landing page"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
+                    autocomplete="off">
                 </div>
               </div>
               <div class="mt-4">
                 <span>Campaign term</span>
                 <div class="flex items-center">
                   <span class="utm-label">utm_term</span>
-                  <input oninput="onChangeParams('utm_term')(event)" name="utm_term" type="text" placeholder="free, -30%, registration"
-                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off">
+                  <input oninput="onChangeParams('utm_term')(event)" name="utm_term" type="text"
+                    placeholder="free, -30%, registration"
+                    class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
+                    autocomplete="off">
                 </div>
               </div>
             </div>
@@ -136,7 +152,8 @@
         <div class="flex items-center mt-4">
           <span onclick="copyResultToCB()" class="dropdown-btn">Copy</span>
           <input id="result" type="text" placeholder="You will see the result here..."
-            class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300" autocomplete="off" disabled>
+            class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
+            autocomplete="off" disabled>
         </div>
       </div>
       <hr class="border-gray-400 dark:border-gray-600 mt-5" />
@@ -146,7 +163,8 @@
           Swetrix Analytics.
         </a>
         <br />
-        Swetrix is a GDPR-compatible, fully cookieless analytics service that provides a wide range of options and focuses on user privacy!
+        Swetrix is a GDPR-compatible, fully cookieless analytics service that provides a wide range of options and
+        focuses on user privacy!
         <br />
         Just give it a try and we promise that you're going to love it! :)
       </div>
@@ -160,11 +178,8 @@
     })
   </script>
   <noscript>
-    <img
-      src="https://api.swetrix.com/log/noscript?pid=AHUlatjxAMlL"
-      alt=""
-      referrerpolicy="no-referrer-when-downgrade"
-    />
+    <img src="https://api.swetrix.com/log/noscript?pid=AHUlatjxAMlL" alt=""
+      referrerpolicy="no-referrer-when-downgrade" />
   </noscript>
 </body>
 
