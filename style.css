@@ -60,3 +60,30 @@ html {
 .container {
   max-width: 930px !important;
 }
+
+.blockCopy {
+  width: 100px;
+  background-color: #374151;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: -40px;
+  left: 50%;
+  margin-left: -50px;
+  transition: opacity 1s;
+  white-space: nowrap;
+}
+
+.blockCopy::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #374151 transparent;
+}

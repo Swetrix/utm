@@ -150,7 +150,12 @@
       <div class="text-gray-800 border-2 mt-5 border-[#fdfdfe] rounded-md p-8 bg-white">
         <h2 class="text-3xl font-medium">Result</h2>
         <div class="flex items-center mt-4">
-          <span onclick="copyResultToCB()" class="dropdown-btn">Copy</span>
+          <span onclick="copyResultToCB()" id="copy-btn" class="dropdown-btn relative">
+            Copy
+            <div>
+              <span class="blockCopy hidden" id="copy-block">Copied!</span>
+            </div>
+          </span>
           <input id="result" type="text" placeholder="You will see the result here..."
             class="w-full border block py-[.4rem] px-[.75rem] shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300"
             autocomplete="off" disabled>
