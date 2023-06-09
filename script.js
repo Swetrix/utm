@@ -9,6 +9,15 @@ function copyResultToCB() {
   resultNode.select()
   resultNode.setSelectionRange(0, 99999)
   navigator.clipboard.writeText(resultNode.value)
+
+  const copyBtn = document.getElementById('copy-btn')
+  const copyBlock = document.getElementById('copy-block')
+
+  copyBlock.classList.remove('hidden')
+
+  setTimeout(function() {
+    copyBlock.classList.add('hidden')
+  }, 500)
 } 
 
 function buildResult() {
